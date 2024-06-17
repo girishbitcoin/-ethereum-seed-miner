@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #24272A;
+    color: white;
+}
+
+#main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-inline: 2rem;
+}
+.heading{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.logo svg{
+    width: 30px;
+    height: 30px;
+    margin-top: .1rem;
+}
+
+.container{
+    border: 1px solid rgba(128, 128, 128, 0.493);
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    max-width: 700px;
+    border-radius: 10px;
+}
+.steps{
+    padding: 0 2rem;
+}
+.steps ol li{
+    padding-bottom: .8rem;
+    font-size: 1rem;
+}
+.info-matter{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #21384A;
+    padding: 1rem .5rem;
+    border-radius: 5px;
+    border-left: 5px solid #1098FC;
+}
+.info{
+    background: #1098FC;
+    height: 20px;
+    width: 20px;
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: black;
+} 
+
+.input-container{
+    width: 100%;
+    overflow: hidden;
+}
+
+.inputs{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: none;
+    padding: 1rem 0;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.inputs div{
+    width: 27%;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.inputs input{
+    width: 100%;
+    outline-color: #2b88cf;
+    background: transparent;
+    border: 1px solid rgba(128, 128, 128, 0.493);
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+}
+ #input-password{
+    cursor: pointer;
+}
+.button{
+    display: inline;
+    width: 20%;
+     background: #1098FC;
+     border: none;
+     padding: .5rem;
+     border-radius: 30px;
+     font-weight: bold;
+     color: white;
+     cursor: pointer;
+     text-align: center;
+
+}
+.button2{
+    width: 40%;
+     background: #1098FC;
+     border: none;
+     padding: 1rem;
+     border-radius: 30px;
+     font-weight: bold;
+     color: white;
+     cursor: pointer;
+     text-align: center;
+     display: none
+
+}
+
+#loading-btn{
+    display: none;
+}
+
+.ok{
+    display: none;
+}
+
+
+.message{
+    color: red;
+    font-weight: bold;
+    letter-spacing: .2rem;
+    display: none;
+}
+
+.success-message{
+    color: green;
+    font-weight: bold;
+    letter-spacing: .2rem;
+    display: none;
+}

